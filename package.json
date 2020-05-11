@@ -4,6 +4,7 @@
   "description": "Backend code for legendary Patientor",
   "main": "index.js",
   "scripts": {
+    "tsc": "tsc",
     "test": "jest --verbose"
   },
   "repository": {
