@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/ahojukka5/patientor-backend/issues"
   },
-  "homepage": "https://github.com/ahojukka5/patientor-backend#readme"
+  "homepage": "https://github.com/ahojukka5/patientor-backend#readme",
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
 }
