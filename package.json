@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/ahojukka5/patientor-backend#readme",
   "devDependencies": {
+    "@types/cors": "^2.8.6",
     "@types/express": "^4.17.6",
     "@types/jest": "^25.2.1",
     "@types/node": "^13.13.5",
