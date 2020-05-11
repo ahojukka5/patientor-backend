@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "tsc": "tsc",
+    "dev": "ts-node-dev index.ts",
+    "lint": "eslint --ext .ts .",
     "test": "jest --verbose"
   },
   "repository": {
