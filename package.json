@@ -1,0 +1,22 @@
+{
+  "name": "patientor-backend",
+  "version": "0.1.0",
+  "description": "Backend code for legendary Patientor",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ahojukka5/patientor-backend.git"
+  },
+  "keywords": [
+    "patientor"
+  ],
+  "author": "Jukka Aho",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ahojukka5/patientor-backend/issues"
+  },
+  "homepage": "https://github.com/ahojukka5/patientor-backend#readme"
+}
