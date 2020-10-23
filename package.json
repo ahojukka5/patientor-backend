@@ -42,7 +42,10 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
+    "@bitjourney/uuid-v4": "^1.0.1",
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "install": "^0.13.0",
+    "npm": "^6.14.8"
   }
 }
