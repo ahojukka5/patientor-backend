@@ -8,7 +8,13 @@ import {
   NewPatientEntry,
 } from '../types';
 
-const patients: Array<PatientEntry> = patientData;
+import toNewPatientEntry from '../utils';
+
+const patients: Array<PatientEntry> = patientData.map((obj) => {
+  const object = toNewPatientEntry(obj) as PatientEntry;
+  object.id = obj.id;
+  return object;
+});
 
 const getEntries = (): Array<PatientEntry> => {
   return patients;
