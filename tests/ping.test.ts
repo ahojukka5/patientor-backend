@@ -1,5 +1,5 @@
 import express from 'express';
-import pingRouter from '../controllers/ping';
+import pingRouter from '../src/controllers/ping';
 import supertest from 'supertest';
 
 const app = express();
