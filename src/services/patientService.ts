@@ -3,24 +3,24 @@ import { generateUUIDv4 } from '@bitjourney/uuid-v4';
 import patientData from '../../data/patients.json';
 
 import {
-  NonSensitivePatientEntry,
-  PatientEntry,
-  NewPatientEntry,
+  NonSensitivePatient,
+  Patient,
+  NewPatient,
 } from '../types';
 
-import toNewPatientEntry from '../utils';
+import toNewPatient from '../utils';
 
-const patients: Array<PatientEntry> = patientData.map((obj) => {
-  const object = toNewPatientEntry(obj) as PatientEntry;
+const patients: Array<Patient> = patientData.map((obj) => {
+  const object = toNewPatient(obj) as Patient;
   object.id = obj.id;
   return object;
 });
 
-const getEntries = (): Array<PatientEntry> => {
+const getEntries = (): Array<Patient> => {
   return patients;
 };
 
-const getNonSensitiveEntries = (): Array<NonSensitivePatientEntry> => {
+const getNonSensitiveEntries = (): Array<NonSensitivePatient> => {
   return patients.map(({ id, name, dateOfBirth, gender, occupation }) => ({
     id,
     name,
@@ -30,7 +30,7 @@ const getNonSensitiveEntries = (): Array<NonSensitivePatientEntry> => {
   }));
 };
 
-const addEntry = (entry: NewPatientEntry): PatientEntry => {
+const addEntry = (entry: NewPatient): Patient => {
   const newPatientEntry = { id: generateUUIDv4(), ...entry };
   patients.push(newPatientEntry);
   return newPatientEntry;
