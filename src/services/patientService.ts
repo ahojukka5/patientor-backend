@@ -2,11 +2,7 @@ import { generateUUIDv4 } from '@bitjourney/uuid-v4';
 
 import patientData from '../../data/patients.json';
 
-import {
-  NonSensitivePatient,
-  Patient,
-  NewPatient,
-} from '../types';
+import { NonSensitivePatient, Patient, NewPatient } from '../types';
 
 import toNewPatient from '../utils';
 
@@ -36,8 +32,14 @@ const addEntry = (entry: NewPatient): Patient => {
   return newPatientEntry;
 };
 
+const findById = (id: string): Patient | undefined => {
+  const patient = patients.find((d) => d.id == id);
+  return patient;
+};
+
 export default {
   getEntries,
   getNonSensitiveEntries,
   addEntry,
+  findById,
 };
