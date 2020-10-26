@@ -1,9 +1,8 @@
-export interface Diagnose {
+export interface Diagnosis {
   code: string;
   name: string;
   latin?: string;
 }
-
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface Entry {}
@@ -27,3 +26,4 @@ export enum Gender {
   Female = 'female',
   Other = 'other',
 }
+

@@ -1,6 +1,6 @@
 import { generateUUIDv4 } from '@bitjourney/uuid-v4';
 
-import patientData from '../../data/patients.json';
+import patientData from '../../data/patients';
 
 import { NonSensitivePatient, Patient, NewPatient } from '../types';
 
