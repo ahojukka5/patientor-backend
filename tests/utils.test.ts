@@ -35,7 +35,19 @@ describe('toNewPatient', () => {
         name: 'John Doe',
         dateOfBirth: '2000-01-01',
         ssn: '1234',
-        gender: 'male'
+        gender: 'male',
+      });
+    }).toThrow(Error);
+  });
+
+  test('throws if entries is missing', () => {
+    expect(() => {
+      toNewPatient({
+        name: 'John Doe',
+        dateOfBirth: '2000-01-01',
+        ssn: '1234',
+        gender: 'male',
+        occupation: 'none',
       });
     }).toThrow(Error);
   });
