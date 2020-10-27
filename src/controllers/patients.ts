@@ -11,8 +11,8 @@ router.get('/', (_req, res) => {
 
 router.post('/', (req, res) => {
   const newPatientEntry = toNewPatient({ ...req.body, entries: [] });
-  const addedEntry = patientService.addEntry(newPatientEntry);
-  res.send(addedEntry);
+  const addedPatient = patientService.addPatient(newPatientEntry);
+  res.send(addedPatient);
 });
 
 router.get('/:id', (req, res) => {
