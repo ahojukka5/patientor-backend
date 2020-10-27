@@ -1,4 +1,4 @@
-import toNewPatient from '../src/utils';
+import { toNewPatient } from '../src/utils';
 
 describe('toNewPatient', () => {
   test('throws if name is missing or incorrect', () => {

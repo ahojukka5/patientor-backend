@@ -65,7 +65,7 @@ const parseEntries = (entries: any): Entry[] => {
   return entries;
 };
 
-const toNewPatient = (object: any): NewPatient => {
+export const toNewPatient = (object: any): NewPatient => {
   return {
     name: parseName(object.name),
     dateOfBirth: parseDateOfBirth(object.dateOfBirth),
@@ -76,4 +76,4 @@ const toNewPatient = (object: any): NewPatient => {
   };
 };
 
-export default toNewPatient;
+export default { toNewPatient };

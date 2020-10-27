@@ -4,7 +4,7 @@ import patientData from '../../data/patients';
 
 import { NonSensitivePatient, Patient, NewPatient } from '../types';
 
-import toNewPatient from '../utils';
+import { toNewPatient } from '../utils';
 
 const patients: Array<Patient> = patientData.map((obj) => {
   const object = toNewPatient(obj) as Patient;
