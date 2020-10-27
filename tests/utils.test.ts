@@ -28,4 +28,15 @@ describe('toNewPatient', () => {
       });
     }).toThrow(Error);
   });
+
+  test('throws if occupation is missing', () => {
+    expect(() => {
+      toNewPatient({
+        name: 'John Doe',
+        dateOfBirth: '2000-01-01',
+        ssn: '1234',
+        gender: 'male'
+      });
+    }).toThrow(Error);
+  });
 });
