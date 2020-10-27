@@ -51,4 +51,21 @@ describe('toNewPatient', () => {
       });
     }).toThrow(Error);
   });
+
+  test('throws if incorrect entry', () => {
+    expect(() => {
+      toNewPatient({
+        name: 'John Doe',
+        dateOfBirth: '2000-01-01',
+        ssn: '1234',
+        gender: 'male',
+        occupation: 'none',
+        entries: [
+          {
+            type: 'unknown',
+          },
+        ],
+      });
+    }).toThrow(Error);
+  });
 });
