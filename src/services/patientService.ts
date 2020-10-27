@@ -38,7 +38,7 @@ const findById = (id: string): Patient | undefined => {
 };
 
 const addPatientEntry = (patientId: string, entry: NewEntry): Entry => {
-  const newPatientEntry = { id: generateUUIDv4(), ...entry } as Entry;
+  const newPatientEntry = { id: generateUUIDv4(), ...entry };
   const patient = findById(patientId);
   if (!patient) {
     throw Error(`Patient with id ${patientId} not found.`);
