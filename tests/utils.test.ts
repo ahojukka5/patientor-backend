@@ -6,4 +6,10 @@ describe('toNewPatient', () => {
       toNewPatient({});
     }).toThrow(Error);
   });
+
+  test('throws if DateOfBirth is missing', () => {
+    expect(() => {
+      toNewPatient({ name: 'John Doe' });
+    }).toThrow(Error);
+  });
 });
