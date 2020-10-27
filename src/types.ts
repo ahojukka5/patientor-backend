@@ -43,7 +43,7 @@ interface SickLeave {
 interface OccupationalHealthcareEntry extends BaseEntry {
   type: 'OccupationalHealthcare';
   employerName: string;
-  sickLeave: SickLeave;
+  sickLeave?: SickLeave;
 }
 
 interface HealthCheckEntry extends BaseEntry {
