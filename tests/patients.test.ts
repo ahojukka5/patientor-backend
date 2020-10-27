@@ -32,4 +32,31 @@ describe('patients endpoint', () => {
     const response = await request.get(uri);
     expect(response.status).toEqual(404);
   });
+
+  test('should add new entry to existing patient', async () => {
+    const uri = '/api/patients/d2773336-f723-11e9-8f0b-362b9e155667';
+    const payload = {
+      id: '12345',
+      date: '2020-01-01',
+      type: 'Hospital',
+      specialist: 'MD House',
+      diagnosisCodes: ['B00.0'],
+      description: 'Born.',
+      discharge: {
+        date: '2020-01-2',
+        criteria: 'Get away from hospital.',
+      },
+    };
+    await request.post(`${uri}/entries`).send(payload);
+    const response = await request.get(uri);
+    const entries = response.body.entries;
+    expect(entries[entries.length-1].description).toEqual('Born.');
+  });
+
+  test('should give 404 if adding entry to non-existing patient', async () => {
+    const uri = '/api/patients/notfound';
+    const response = await request.post(`${uri}/entries`).send({});
+    expect(response.status).toEqual(404);
+  });
+
 });
