@@ -8,6 +8,7 @@ describe('patients endpoint', () => {
     const response = await request.get('/api/patients');
     expect(response.body[0].name).toEqual('John McClane');
   });
+
   test('should add new patient', async () => {
     const payload = {
       name: 'John Doe',
@@ -18,5 +19,17 @@ describe('patients endpoint', () => {
     };
     const response = await request.post('/api/patients').send(payload);
     expect(response.body.name).toEqual('John Doe');
+  });
+
+  test('should return one patient data', async () => {
+    const uri = '/api/patients/d2773336-f723-11e9-8f0b-362b9e155667';
+    const response = await request.get(uri);
+    expect(response.body.name).toEqual('John McClane');
+  });
+
+  test('should return 400 if patient data not found', async () => {
+    const uri = '/api/patients/notfound';
+    const response = await request.get(uri);
+    expect(response.status).toEqual(404);
   });
 });
