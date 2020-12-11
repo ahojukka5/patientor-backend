@@ -4,7 +4,7 @@
   "description": "Backend code for legendary Patientor",
   "main": "index.js",
   "scripts": {
-    "tsc": "tsc",
+    "build": "tsc",
     "dev": "ts-node-dev src/index.ts",
     "lint": "eslint --ext .ts .",
     "start": "node build/index.js",
