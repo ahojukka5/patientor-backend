@@ -6,6 +6,9 @@
   "scripts": {
     "build": "tsc",
     "dev": "ts-node-dev src/index.ts",
+    "docker:build": "docker build -t ahojukka5/patientor-backend .",
+    "docker:run:test": "docker run --rm -it --name patientor-backend -p 3000:3000 ahojukka5/patientor-backend",
+    "docker:run": "docker run -d --name patientor-backend -p 3000:3000 ahojukka5/patientor-backend",
     "lint": "eslint --ext .ts .",
     "start": "node build/src/index.js",
     "test": "jest --verbose",
