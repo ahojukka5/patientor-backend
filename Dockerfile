@@ -8,6 +8,9 @@ RUN npm install
 COPY . .
 RUN npm run build
 
+# Build ready, let's remove node_modules and install production dependencies
+RUN rm -rf node_modules
+RUN npm install --production
 
 FROM node:14-alpine
 
@@ -22,8 +25,7 @@ USER node
 
 # Copy build and install production packages
 COPY --chown=node:node --from=build /wrk/build ${APP_HOME}
-COPY --chown=node:node --from=build /wrk/package*.json ${APP_HOME}/
-RUN npm install --production
+COPY --chown=node:node --from=build /wrk/node_modules ${APP_HOME}/node_modules
 
 # Defaults
 EXPOSE 3000
