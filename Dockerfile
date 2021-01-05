@@ -12,7 +12,13 @@ RUN npm run build
 RUN rm -rf node_modules
 RUN npm install --production
 
-FROM node:14-alpine
+
+
+FROM alpine
+
+# Add nodejs and node user
+RUN apk add --update nodejs
+RUN adduser -D -h /home/node node
 
 # Setup environment variables
 ENV NODE_ENV=production
