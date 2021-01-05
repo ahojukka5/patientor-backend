@@ -1,6 +1,12 @@
 FROM node:14-alpine
 
-WORKDIR /app
+ARG APP_HOME=/home/node/app
+
+RUN mkdir ${APP_HOME} && chown -R node:node ${APP_HOME}
+
+WORKDIR ${APP_HOME}
+
+USER node
 
 COPY package*.json ./
 
